@@ -1,0 +1,31 @@
+﻿<div class="col-md-6 col-md-offset-3">
+  <div>
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+  </div>
+  <p>You're logged in with the MEAN Stack & Angular 2/5!!</p>
+  <h3>All registered users:</h3>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users" scope="row">
+      <td>
+        {{user.username}}
+      </td>
+      <td>
+        {{user.firstName}}
+      </td>
+      <td>{{user.lastName}}</td>
+      <td><a (click)="deleteUser(user._id)">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
